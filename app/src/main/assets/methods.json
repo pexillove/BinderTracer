@@ -1,0 +1,93 @@
+{
+  "android.gui.IDisplayEventConnection": {
+    "1": "stealReceiveChannel",
+    "2": "setVsyncRate",
+    "3": "requestNextVsync"
+  },
+  "android.app.IActivityManager": {
+    "1": "startActivity",
+    "2": "startActivityAsUser",
+    "3": "startActivityAndWait",
+    "6": "broadcastIntent",
+    "7": "unbroadcastIntent",
+    "11": "startService",
+    "12": "stopService",
+    "13": "bindService",
+    "14": "unbindService",
+    "19": "getRunningAppProcesses",
+    "20": "getProcessMemoryInfo",
+    "42": "forceStopPackage",
+    "57": "getContentProvider",
+    "84": "startActivityFromRecents"
+  },
+  "android.content.pm.IPackageManager": {
+    "1": "checkPackageStartable",
+    "2": "isPackageAvailable",
+    "3": "getPackageInfo",
+    "4": "getPackageUid",
+    "5": "getPackageGids",
+    "11": "getApplicationInfo",
+    "13": "getActivityInfo",
+    "58": "getInstalledPackages",
+    "60": "getInstalledApplications",
+    "65": "resolveIntent",
+    "67": "queryIntentActivities"
+  },
+  "android.os.IServiceManager": {
+    "1": "getService",
+    "2": "checkService",
+    "3": "addService",
+    "4": "listServices"
+  },
+  "android.app.IActivityTaskManager": {
+    "1": "startActivity",
+    "2": "startActivities",
+    "6": "activityPaused",
+    "7": "activityStopped",
+    "11": "finishActivity",
+    "16": "getTasks",
+    "20": "moveTaskToFront"
+  },
+  "android.view.IWindowManager": {
+    "1": "openSession",
+    "10": "getInitialDisplaySize",
+    "11": "getBaseDisplaySize",
+    "19": "setForcedDisplaySize"
+  },
+  "android.app.INotificationManager": {
+    "1": "cancelAllNotifications",
+    "7": "enqueueNotificationWithTag",
+    "8": "cancelNotificationWithTag",
+    "9": "setNotificationsEnabledForPackage"
+  },
+  "android.media.IAudioService": {
+    "1": "adjustStreamVolume",
+    "2": "adjustVolume",
+    "3": "setStreamVolume",
+    "10": "getStreamVolume",
+    "11": "getStreamMaxVolume"
+  },
+  "android.hardware.display.IDisplayManager": {
+    "1": "getDisplayInfo",
+    "2": "getDisplayIds",
+    "3": "registerCallback"
+  },
+  "android.net.IConnectivityManager": {
+    "1": "getActiveNetworkInfo",
+    "2": "getAllNetworkInfo",
+    "3": "getActiveNetwork"
+  },
+  "android.location.ILocationManager": {
+    "1": "requestLocationUpdates",
+    "2": "removeUpdates",
+    "3": "getLastLocation"
+  },
+  "android.hidl.base@1.0::IBase": {
+    "0x00FFFFFF": "interfaceDescriptor",
+    "0x00FFFFFE": "linkToDeath",
+    "0x00FFFFFD": "ping",
+    "0x00FFFFFC": "getDebugInfo",
+    "0x00FFFFFB": "notifySyspropsChanged",
+    "0x00FFFFFA": "unlinkToDeath"
+  }
+}

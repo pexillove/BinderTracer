@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">BTrace Viewer</string>
+    
+    <!-- 导航 -->
+    <string name="nav_apps">应用</string>
+    <string name="nav_monitor">监控</string>
+    <string name="nav_settings">设置</string>
+    
+    <!-- 设置页面 -->
+    <string name="settings_title">设置</string>
+    <string name="settings_status_check">状态检查</string>
+    <string name="settings_root_permission">Root权限</string>
+    <string name="settings_socket_connection">TCP连接</string>
+    <string name="settings_btrace_process">btrace进程</string>
+    <string name="settings_status_granted">[已获取]</string>
+    <string name="settings_status_not_granted">[未获取]</string>
+    <string name="settings_status_connected">[已连接]</string>
+    <string name="settings_status_not_connected">[未连接]</string>
+    <string name="settings_status_running">[运行中]</string>
+    <string name="settings_status_not_running">[未运行]</string>
+    <string name="settings_status_unchecked">[未检查]</string>
+    <string name="settings_check">检查</string>
+    <string name="settings_test">测试</string>
+    
+    <!-- 关于 -->
+    <string name="settings_about">关于</string>
+    <string name="settings_version">版本</string>
+    <string name="settings_check_update">检查更新</string>
+    <string name="settings_open_source">开源地址</string>
+    
+    <!-- Toast消息 -->
+    <string name="toast_btrace_start_success">btrace 启动成功</string>
+    <string name="toast_btrace_start_failed">btrace 启动失败，请检查Root权限和路径配置</string>
+    <string name="toast_btrace_stop_success">btrace 已停止</string>
+    <string name="toast_btrace_stop_failed">btrace 停止失败</string>
+</resources>
