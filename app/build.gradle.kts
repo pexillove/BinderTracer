@@ -65,8 +65,11 @@ android {
         applicationId = "com.btrace.viewer"
         minSdk = 26
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0.0"
+        // 版本号由 git tag 驱动(CI 注入 VERSION_NAME=v主.次.修订,见 release.yml);本地构建回落 dev
+        val tagVer = System.getenv("VERSION_NAME")
+            ?.let { Regex("""(\d+)\.(\d+)\.(\d+)""").find(it)?.groupValues }
+        versionCode = tagVer?.let { it[1].toInt() * 10000 + it[2].toInt() * 100 + it[3].toInt() } ?: 1
+        versionName = tagVer?.get(0) ?: "1.0.0-dev"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
