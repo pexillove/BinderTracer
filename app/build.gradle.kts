@@ -83,11 +83,22 @@ android {
         buildConfigField("long", "SIG_CACHE_TOTAL_SOFT_LIMIT_BYTES", "262144L")
     }
 
+    // CI 通过环境变量注入正式签名(见 .github/workflows/release.yml);本地没配时回落 debug 签名
+    val ciKeystore = System.getenv("KEYSTORE_FILE")
+    if (ciKeystore != null) {
+        signingConfigs.create("release") {
+            storeFile = file(ciKeystore)
+            storePassword = System.getenv("KEYSTORE_PASSWORD")
+            keyAlias = "release"
+            keyPassword = System.getenv("KEYSTORE_PASSWORD")
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-            signingConfig = signingConfigs.getByName("debug")
+            signingConfig = signingConfigs.findByName("release") ?: signingConfigs.getByName("debug")
         }
     }
     compileOptions {
