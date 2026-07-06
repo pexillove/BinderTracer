@@ -470,7 +470,7 @@ int kprobe_binder_transaction(struct pt_regs *ctx) {
 
         u64 chunk_size = ((i + 1) * CHUNK_SIZE > data_size) ? (data_size - i * CHUNK_SIZE) : CHUNK_SIZE;
 		unsigned probe_read_size = chunk_size < sizeof(binder_transaction_event->chunk_data) ? chunk_size : sizeof(binder_transaction_event->chunk_data);
-        bpf_probe_read_user(binder_transaction_event->chunk_data, probe_read_size, (void *)(data.ptr.buffer + i * CHUNK_SIZE));
+        bpf_probe_read_user(binder_transaction_event->chunk_data, probe_read_size, (void *)((data.ptr.buffer + i * CHUNK_SIZE) & 0x00FFFFFFFFFFFFFFULL));
 
         bpf_ringbuf_submit(binder_transaction_event, 0);
     }
